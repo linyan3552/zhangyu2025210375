@@ -1,0 +1,874 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 水印样式 */
+body::before {
+    content: "2025210375张宇";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    font-size: 5rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.05); /* 水印文字颜色 */
+    z-index: 9999;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+body {
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.6;
+    color: black; /* 页面主体文字颜色 */
+    background-color: #ffffff; /* 页面背景色 */
+}
+
+/* 首页样式 */
+.homepage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* ========== 图片背景设置代码（第24-27行） ========== */
+    /* 1. 设置背景图片路径 */
+    background-image: url('"C:\Users\yskkl\Downloads\Phone Link\com.xingin.xhs_20251214161422.jpg"');
+    /* 2. 控制图片尺寸：cover表示覆盖整个容器 */
+    background-size: cover;
+    /* 3. 控制图片位置：center表示居中显示 */
+    background-position: center;
+    /* 4. 控制图片重复：no-repeat表示不重复 */
+    background-repeat: no-repeat;
+    
+    /* 其他背景选项示例（取消注释启用）：
+    /* 纯色背景 */
+    /* background-color: rgb(104, 148, 92); */
+    
+    /* 渐变背景 */
+    /* background: linear-gradient(135deg, rgb(104, 148, 92) 0%, rgb(148, 187, 148) 100%); */
+    
+    color: white; /* 首页文字颜色（当使用背景图片或渐变时） */
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.home-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: black; /* 首页主标题颜色 */
+    font-weight: 700;
+}
+
+.home-subtitle-1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: black; /* 首页副标题1颜色 */
+    opacity: 0.9;
+}
+
+.home-subtitle-2 {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: black; /* 首页副标题2颜色 */
+    opacity: 0.8;
+}
+
+.home-button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background-color: white; /* 首页按钮背景色 */
+    color: #415160; /* 首页按钮文字颜色 */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Noto Serif SC', serif;
+}
+
+.home-button:hover {
+    background-color: #f8f9fa; /* 首页按钮悬停背景色 */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 阅读记录主内容 */
+.reading-content {
+    display: none;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 双栏布局 */
+.two-column-layout {
+    display: flex;
+    margin: 0 10px 20px 10px;
+    gap: 0;
+    height: calc(var(--vh, 1vh) * 100 - 100px); /* 减去进一步缩减后的header高度和底部导航栏 */
+    width: calc(100% - 20px);
+}
+
+/* 左侧栏 */
+.left-sidebar {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* 分类导航 */
+.category-nav {
+    background-color: #dbe6e2; /* 左侧分类导航背景色 */
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border-bottom: none;
+    margin:  0  0; /* 右外边距从20px减到0，与右边栏紧贴 */
+}
+
+.category-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-btn {
+    background-color: #fafafa; /* 分类按钮默认背景色 */
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.category-btn:hover {
+    background-color: #415160; /* 分类按钮悬停背景色 */
+    color: rgb(252, 252, 252); /* 分类按钮悬停文字颜色 */
+    transform: translateY(-2px);
+}
+
+.category-btn.active {
+    background-color: rgb(164,170,180); /* 分类按钮激活状态背景色 */
+    color: rgb(255, 255, 255); /* 分类按钮激活状态文字颜色 */
+    box-shadow: 0 4px 15px rgba(248, 248, 248, 0.4);
+}
+
+/* 分类内容 */
+.category-content {
+    display: none;
+    padding: 20px 0;
+}
+
+.category-content.active {
+    display: block;
+}
+
+/* 页面头部 */
+.header {
+    background-color: #e5c2b2; /* 页面头部背景色 */
+    color: white; /* 页面头部文字颜色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px; /* 左右内边距从60px减到20px，与左侧导航对齐 */
+    margin-bottom: 10px; /* 底部外边距从20px减到10px，让导航上移 */
+    border-radius: 10px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+}
+
+.header-content {
+    text-align: center;
+    flex: 1;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 月份导航 */
+.month-nav {
+    background-color: #dbe6e2; /* 月份导航背景色 */
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex: 1;
+    overflow-y: hidden; /* 禁用滚动 */
+    margin: 5px 0 20px 0; /* 右外边距从20px减到0，与右边栏紧贴 */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.month-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 按钮间距 */
+    max-height: none;
+    height: auto;
+}
+
+.month-btn {
+    background-color: #f0f0f0; /* 月份按钮默认背景色 */
+    border: none;
+    padding: 3px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.month-btn:hover {
+    background-color: #415160; /* 月份按钮悬停背景色 */
+    color: rgb(255, 255, 255); /* 月份按钮悬停文字颜色 */
+    transform: translateY(-2px);
+}
+
+.month-btn.active {
+    background-color: rgb(164,170,180); /* 月份按钮激活状态背景色 */
+    color: rgb(254, 254, 254); /* 月份按钮激活状态文字颜色 */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+/* 主要内容区域 */
+.main-content {
+    flex: 1; /* 控制宽度：flex: 1 表示占据剩余空间，可改为具体数值如 width: 800px */
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    /* 移除所有额外样式，确保完全填充可用空间 */
+}
+
+.month-section {
+    display: none;
+    background-color: rgb(255, 255, 255); /* 月份内容区域背景色 */
+    border-radius: 10px;
+    padding: 80px 0; /* 控制高度：上下内边距越大，长方形越长 */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    width: 100%; /* 控制宽度：可改为具体数值如 width: 90% */
+    /* 增大上下内边距，使其上下距离等于左边导航栏总和 */
+}
+
+.month-section.active {
+    display: block;
+}
+
+.month-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #e5c2b2; /* 月份标题颜色 */
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* 书籍滑动容器 */
+.book-slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: visible; /* 修改为visible以显示完整按钮 */
+}
+
+.slider-container {
+    display: flex;
+}
+
+.book-slide {
+    flex: 0 0 100%;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.book-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* 书籍卡片 */
+.book-card {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 20px 20px;
+    background-color: #ffffff; /* 书籍卡片背景色 */
+    border: 2px solid #e5c2b2; /* 书籍卡片边框颜色 */
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    width: calc(100% - 40px); /* 增大宽度，使其紧贴左右边缘 */
+    margin: 0 20px;
+}
+
+.book-cover {
+    flex-shrink: 0;
+}
+
+.book-cover img {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.book-cover img:hover {
+    transform: scale(1.02);
+}
+
+.book-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.edit-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.edit-btn, .save-btn {
+    background-color: #f3ebd6; /* 保存按钮背景色 */
+    color: #e5c2b2; /* 保存按钮文字颜色 */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin-left: 8px;
+}
+
+.edit-btn {
+    background-color: #f3ebd6; /* 编辑按钮背景色 */
+}
+
+.edit-btn:first-child {
+    margin-left: 0;
+}
+
+.save-btn:hover {
+    background-color: #f3ebd6; /* 保存按钮悬停背景色 */
+}
+
+.save-btn:active {
+    background-color: #f3ebd6; /* 保存按钮点击背景色 */
+}
+
+/* 编辑时的样式 */
+[contenteditable="true"] {
+    outline: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+[contenteditable="true"].editing {
+    outline-color: #acb5b2; /* 可编辑内容编辑状态边框颜色 */
+    box-shadow: 0 0 0 3px rgba(251, 251, 251, 0.2);
+    background-color: rgba(33, 150, 243, 0.05); /* 可编辑内容编辑状态背景色 */
+}
+
+/* 新记录按钮样式 */
+.new-record-section {
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.new-record-btn, .search-btn {
+    background-color: #f3ebd6; /* 新记录按钮和查询按钮背景色 */
+    color: #e5c2b2; /* 新记录按钮和查询按钮文字颜色 */
+    border: 2px solid #f3ebd6; /* 新记录按钮和查询按钮边框颜色 */
+    padding: 20px 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.new-record-btn {
+    right: 20px;
+}
+
+.search-btn {
+    left: 20px;
+}
+
+.search-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+#search-input {
+    padding: 15px;
+    border: 2px solid #f3ebd6; /* 搜索输入框边框颜色 */
+    border-radius: 5px;
+    font-size: 1.2rem;
+    width: 300px;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.search-submit-btn {
+    background-color: #f3ebd6; /* 搜索提交按钮背景色 */
+    color: white; /* 搜索提交按钮文字颜色 */
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: bold;
+}
+
+.search-submit-btn:hover {
+    background-color: #f3ebd6; /* 搜索提交按钮悬停背景色 */
+}
+
+.new-record-btn:hover {
+    background-color: #f3ebd6; /* 新记录按钮悬停背景色 */
+    transform: translateY(-3px) scale(1.05);
+}
+
+.new-record-btn:active {
+    background-color: #f3ebd6; /* 新记录按钮点击背景色 */
+    transform: translateY(0) scale(0.98);
+}
+
+/* 新记录页面样式 */
+.new-record-container {
+    min-height: 100vh;
+    background-color: #f8f9fa; /* 新记录页面背景色 */
+}
+
+.new-record-main {
+    padding: 20px 0;
+}
+
+.new-record-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white; /* 新记录表单背景色 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.cancel-btn {
+    background-color: #f3ebd6; /* 取消按钮背景色 */
+    color: white; /* 取消按钮文字颜色 */
+    border: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.cancel-btn:hover {
+    background-color: #f3ebd6; /* 取消按钮悬停背景色 */
+}
+
+.cancel-btn:active {
+    background-color: #f3ebd6; /* 取消按钮点击背景色 */
+}
+
+.add-quote-btn {
+    background-color: #acb5b2; /* 添加名言按钮背景色 */
+    color: white; /* 添加名言按钮文字颜色 */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.add-quote-btn:hover {
+    background-color: #acb5b2; /* 添加名言按钮悬停背景色 */
+}
+
+.add-quote-btn:active {
+    background-color: #acb5b2; /* 添加名言按钮点击背景色 */
+    transition: all 0.3s ease;
+}
+
+[contenteditable="true"]:hover {
+    outline-color: #aaa; /* 可编辑内容悬停边框颜色 */
+    background-color: #f9f9f9; /* 可编辑内容悬停背景色 */
+}
+
+[contenteditable="true"]:focus {
+    outline-color: #f3ebd6; /* 可编辑内容聚焦边框颜色 */
+    background-color: #fcfcfc; /* 可编辑内容聚焦背景色 */
+}
+
+.book-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333; /* 书籍标题颜色 */
+    line-height: 1.3;
+}
+
+.book-author {
+    font-size: 1.1rem;
+    color: #666; /* 书籍作者颜色 */
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+/* 名言部分 */
+.book-quotes {
+    margin-bottom: 30px;
+}
+
+.book-quotes h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #e4c4b5; /* 名言标题颜色 */
+}
+
+.book-quotes blockquote {
+    background-color: #fff; /* 名言背景色 */
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #e4c4b5; /* 名言左侧边框颜色 */
+    border-radius: 5px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444; /* 名言文字颜色 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 读后感部分 */
+.book-review {
+    background-color: #fff; /* 读后感背景色 */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.book-review h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #e4c4b5; /* 读后感标题颜色 */
+}
+
+.book-review p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555; /* 读后感文字颜色 */
+    text-align: justify;
+}
+
+/* 滑动控制按钮 */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #e5c2b2; /* 滑动控制按钮背景色 */
+    color: white; /* 滑动控制按钮文字颜色 */
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* 改为圆形 */
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 自定义箭头样式 */
+.slider-btn::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: solid white;
+    border-width: 3px 3px 0 0;
+    transition: all 0.3s ease;
+}
+
+.prev-btn::before {
+    transform: rotate(-135deg);
+    margin-right: 3px;
+}
+
+.next-btn::before {
+    transform: rotate(45deg);
+    margin-left: 3px;
+}
+
+.slider-btn:hover {
+    background-color: #e4c4b5; /* 滑动控制按钮悬停背景色 */
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.slider-btn:hover::before {
+    border-width: 4px 4px 0 0;
+}
+
+.prev-btn {
+    left: -40px; /* 调整位置，使其完全显示在外部 */
+}
+
+.next-btn {
+    right: -40px; /* 调整位置，使其完全显示在外部 */
+}
+
+/* 滑动指示器 */
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd; /* 滑动指示器默认背景色 */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #e4c4b5; /* 滑动指示器激活状态背景色 */
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* 页面底部 - 已隐藏 */
+.footer {
+    display: none;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #f5f5f5;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    padding: 15px 20px;
+    background-color: #e5c2b2;
+    color: #333;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .home-title {
+        font-size: 2.5rem;
+    }
+    
+    .home-subtitle-1 {
+        font-size: 1.2rem;
+    }
+    
+    .home-subtitle-2 {
+        font-size: 1rem;
+    }
+    
+    .home-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .month-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .month-section {
+        padding: 20px;
+    }
+    
+    .month-title {
+        font-size: 1.5rem;
+    }
+    
+    .book-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border: 2px solid #e5c2b2; /* 响应式设计下书籍卡片边框颜色 */
+    }
+    
+    .book-cover img {
+        width: 250px;
+        height: 375px;
+    }
+    
+    .book-title {
+        font-size: 1.5rem;
+    }
+    
+    .slider-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .prev-btn {
+        left: -25px;
+    }
+    
+    .next-btn {
+        right: -25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 40px 0;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .book-cover img {
+        width: 200px;
+        height: 300px;
+    }
+    
+    .month-buttons {
+        gap: 5px;
+    }
+    
+    .month-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新记录 - 阅读记录</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="new-record-container">
+        <header class="header">
+            <div class="container">
+                <h1 class="title">新阅读记录</h1>
+                <p class="subtitle">记录你的阅读时光</p>
+            </div>
+        </header>
+
+        <main class="new-record-main">
+            <div class="container">
+                <div class="new-record-form">
+                    <!-- 书籍分类选择 -->
+                    <div class="form-group">
+                        <label for="book-category">书籍分类：</label>
+                        <select id="book-category">
+                            <option value="serious">严肃文学</option>
+                            <option value="other">其他小说</option>
+                        </select>
+                    </div>
+
+                    <!-- 书籍月份选择 -->
+                    <div class="form-group">
+                        <label for="book-month">阅读月份：</label>
+                        <select id="book-month">
+                            <option value="1">一月</option>
+                            <option value="2">二月</option>
+                            <option value="3">三月</option>
+                            <option value="4">四月</option>
+                            <option value="5">五月</option>
+                            <option value="6">六月</option>
+                            <option value="7">七月</option>
+                            <option value="8">八月</option>
+                            <option value="9">九月</option>
+                            <option value="10">十月</option>
+                            <option value="11">十一月</option>
+                            <option value="12">十二月</option>
+                        </select>
+                    </div>
+
+                    <!-- 书籍卡片 -->
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <!-- 封面图片可以留空或添加默认图片 -->
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title" contenteditable="true">书名</h3>
+                            <p class="book-author">
+                                作者：
+                                <span class="editable-author-name" contenteditable="true">作者名</span>
+                            </p>
+                            <div class="book-quotes">
+                                <h4>书中名言</h4>
+                                <blockquote contenteditable="true">
+                                    请输入书中名言...
+                                </blockquote>
+                                <blockquote contenteditable="true">
+                                    请输入书中名言...
+                                </blockquote>
+                            </div>
+                            <div class="book-review">
+                                <h4>有感</h4>
+                                <p contenteditable="true">
+                                    请输入读后感...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 操作按钮 -->
+                    <div class="form-actions">
+                        <button class="save-btn" onclick="saveNewRecord()">保存记录</button>
+                        <button class="cancel-btn" onclick="cancelNewRecord()">取消</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 新记录页面的脚本
+        function saveNewRecord() {
+            const category = document.getElementById('book-category').value;
+            const month = document.getElementById('book-month').value;
+            const bookCard = document.querySelector('.book-card');
+            
+            // 收集书籍数据
+            const bookData = {
+                title: bookCard.querySelector('.book-title').textContent.trim(),
+                author: bookCard.querySelector('.editable-author-name').textContent.trim(),
+                quotes: Array.from(bookCard.querySelectorAll('.book-quotes blockquote')).map(quote => quote.textContent.trim()),
+                review: Array.from(bookCard.querySelectorAll('.book-review p')).map(p => p.textContent.trim())
+            };
+            
+            // 验证必填项
+            if (!bookData.title || !bookData.author) {
+                alert('请填写书名和作者名');
+                return;
+            }
+            
+            // 生成唯一ID
+            const recordId = 'record_' + Date.now();
+            
+            // 存储新记录
+            localStorage.setItem(recordId, JSON.stringify({
+                ...bookData,
+                category,
+                month,
+                id: recordId
+            }));
+            
+            alert('记录保存成功！');
+            window.location.href = 'reading_record.html';
+        }
+        
+        function cancelNewRecord() {
+            if (confirm('确定要取消吗？未保存的内容将丢失。')) {
+                window.location.href = 'reading_record.html';
+            }
+        }
+        
+        // 添加添加名言的功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const quotesSection = document.querySelector('.book-quotes');
+            
+            // 添加"添加名言"按钮
+            const addQuoteBtn = document.createElement('button');
+            addQuoteBtn.className = 'add-quote-btn';
+            addQuoteBtn.textContent = '添加名言';
+            addQuoteBtn.onclick = function() {
+                const newQuote = document.createElement('blockquote');
+                newQuote.contentEditable = true;
+                newQuote.textContent = '请输入书中名言...';
+                quotesSection.appendChild(newQuote);
+            };
+            
+            quotesSection.appendChild(addQuoteBtn);
+        });
+    </script>
+</body>
+</html>

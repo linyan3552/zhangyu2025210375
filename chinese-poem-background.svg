@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1200 800">
+  <defs>
+    <filter id="inkSplatter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="50"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景水墨效果 -->
+  <rect width="1200" height="800" fill="#3a5a40"/> <!-- 背景色 -->
+  <g filter="url(#inkSplatter)">
+    <path d="M300,100 Q400,200 500,150 Q600,100 700,200 Q800,300 900,250 Q1000,200 1100,300" fill="none" stroke="#2d4436" stroke-width="100"/> <!-- 水墨效果路径1笔触颜色 -->
+    <path d="M200,300 Q300,400 400,350 Q500,300 600,400 Q700,500 800,450 Q900,400 1000,500" fill="none" stroke="#2d4436" stroke-width="80"/> <!-- 水墨效果路径2笔触颜色 -->
+    <path d="M100,500 Q200,600 300,550 Q400,500 500,600 Q600,700 700,650 Q800,600 900,700" fill="none" stroke="#2d4436" stroke-width="60"/> <!-- 水墨效果路径3笔触颜色 -->
+  </g>
+  
+  <!-- 竹里馆诗句 -->
+  <text x="150" y="150" font-family="SimSun, serif" font-size="48" fill="#e0e0e0" text-anchor="middle">竹里馆</text> <!-- 诗名颜色 -->
+  <text x="150" y="200" font-family="SimSun, serif" font-size="24" fill="#e0e0e0" text-anchor="middle">唐·王维</text> <!-- 作者颜色 -->
+  
+  <!-- 诗句 -->
+  <text x="250" y="350" font-family="SimSun, serif" font-size="36" fill="#e0e0e0" text-anchor="start">深林人不知</text> <!-- 诗句1颜色 -->
+  <text x="250" y="420" font-family="SimSun, serif" font-size="36" fill="#e0e0e0" text-anchor="start">明月来相照</text> <!-- 诗句2颜色 -->
+  
+  <!-- 印章 -->
+  <rect x="1050" y="680" width="80" height="80" fill="#8b0000"/> <!-- 印章背景色 -->
+  <text x="1090" y="730" font-family="SimSun, serif" font-size="20" fill="#e0e0e0" text-anchor="middle">三善</text> <!-- 印章文字颜色 -->
+</svg>

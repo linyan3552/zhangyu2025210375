@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不完全阅读记录</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 首页 -->
+    <section id="homepage" class="homepage active">
+        <div class="container">
+            <h1 class="home-title">不完全阅读记录</h1>
+            <p class="home-subtitle-1">透过这里，我看到过去的你</p>
+            <p class="home-subtitle-2">今年已阅读178小时</p>
+            <button class="home-button" onclick="enterReadingRecord()">点击重温文字世界</button>
+        </div>
+    </section>
+
+    <!-- 阅读记录主内容 -->
+    <div id="reading-content" class="reading-content">
+        <!-- 页面头部 -->
+        <header class="header">
+            <div class="container header-content">
+                <button class="search-btn" onclick="showSearchInput()">查询</button>
+                <div id="search-container" class="search-container" style="display: none;">
+                    <input type="text" id="search-input" placeholder="请输入书名" />
+                    <button class="search-submit-btn" onclick="searchBooks()">搜索</button>
+                </div>
+                <h1 class="title">阅读记录</h1>
+                <p class="subtitle">那些曾经由你发出的声音</p>
+            </div>
+            <button class="new-record-btn" onclick="openNewRecordPage()">开启新记录</button>
+        </header>
+
+        <!-- 双栏布局容器 -->
+        <div class="two-column-layout">
+            <!-- 左侧栏 -->
+            <aside class="left-sidebar">
+                <!-- 分类导航 -->
+                <nav class="category-nav">
+                    <div class="category-buttons">
+                        <button class="category-btn active" data-category="serious">严肃文学</button>
+                        <button class="category-btn" data-category="other">其他小说</button>
+                    </div>
+                </nav>
+
+                <!-- 月份导航 -->
+                <nav class="month-nav">
+                    <div class="month-buttons">
+                        <button class="month-btn active" data-month="1">一月</button>
+                        <button class="month-btn" data-month="2">二月</button>
+                        <button class="month-btn" data-month="3">三月</button>
+                        <button class="month-btn" data-month="4">四月</button>
+                        <button class="month-btn" data-month="5">五月</button>
+                        <button class="month-btn" data-month="6">六月</button>
+                        <button class="month-btn" data-month="7">七月</button>
+                        <button class="month-btn" data-month="8">八月</button>
+                        <button class="month-btn" data-month="9">九月</button>
+                        <button class="month-btn" data-month="10">十月</button>
+                        <button class="month-btn" data-month="11">十一月</button>
+                        <button class="month-btn" data-month="12">十二月</button>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- 右侧内容区域 -->
+            <main class="main-content">
+                <div class="container">
+            <!-- 严肃文学分类内容 -->
+            <div id="serious-content" class="category-content active">
+                <!-- 一月阅读记录 - 严肃文学 -->
+                <section class="month-section active" id="serious-month-1">
+                    <h2 class="month-title">一月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">《牛虻》</h3>
+                                        <p class="book-author">作者：伏尼契</p>
+                                        <div class="book-quotes">
+                                            <h4>书中名言</h4>
+                                            <blockquote>
+                                                "别人恨你或爱你都不要紧，重要的是你自己的所作所为。"
+                                            </blockquote>
+                                            <blockquote>
+                                                "神父······你的上帝······满意······了吧？"
+                                            </blockquote>
+                                            <blockquote>
+                                                "那个万寿无疆的耶稣究竟帮了你多少忙、为你吃了多少苦，竟使得你爱他胜过爱我呢？"
+                                            </blockquote>
+                                            <blockquote>
+                                                "无论我活着，或者是死亡，我永远都是，快乐的牛虻。"
+                                            </blockquote>
+                                        </div>
+                                        <div class="book-review">
+                                            <h4>有感</h4>
+                                            <p>当时只道是寻常······与传统的革命小说不一样，这本书更像是对亚瑟的悼亡诗，我不想让一个曾经如此美好的人承受那么多的苦难。书里的所有，他的幸福源于蒙泰尼里，不幸也源于他，他诞生于他犯下的过错，他的人生中满是他的注脚，他死于他手中。可是非要两个挚爱之人的死亡才能换回一个人的醒悟吗？一切都已经太晚了，于是你动身，也奔赴无用的死亡。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 书籍2 -->
+                            <div class="book-slide">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">《桥》</h3>
+                                        <p class="book-author">作者：废名</p>
+                                        <div class="book-review">
+                                            <h4>有感</h4>
+                                            <p>朦胧诗，特别舒服自然的文字，像水一样。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 滑动控制按钮 -->
+                        <button class="slider-btn prev-btn" onclick="prevBook(1, 'serious')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(1, 'serious')"></button>
+                        <!-- 滑动指示器 -->
+                        <div class="slider-indicators" id="serious-indicators-1">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+            
+            <!-- 二月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-2">
+                <h2 class="month-title">二月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《月亮与六便士》</h3>
+                                    <p class="book-author">作者：毛姆</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            爱自己，是一生浪漫的开始。
+                                        </blockquote>
+                                        <blockquote>
+                                            卑鄙与高尚，邪恶与善良，仇恨与热爱，可以并存于同一颗心灵中。
+                                        </blockquote>
+                                        <blockquote>
+                                            唯一重要的，是永恒的现在。
+                                        </blockquote>
+                                        <blockquote>
+                                            爱需要有甘愿示弱的态度，保护他人的愿望，尽心竭力、取悦对方的渴望——总之，爱需要无私，或者至少将自私隐藏得了无痕迹；而且爱也需要矜持。而这些特征，在斯特里克兰身上简直无法想象。爱是全神贯注，它需要一个人全力付出；即使头脑最清醒的人，也可能知道，要让他的爱永不停止，根本没有可能；爱给予的真实是虚幻，而且，明明知道是虚幻，不是别的，却依然爱得义无反顾。爱让一个人比原来的自己更丰富，同时又更贫乏。他不再是他自己。他不是一个人，而是一件东西、一样工具，需要通过某种外在的目的来抵达他的自我。
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>满地都是六便士，他却抬头看到了月亮。生命短暂，不如为了梦想抛却束缚，大胆一次。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(2, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(2, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-2">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 三月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-3">
+                <h2 class="month-title">三月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《世界末日前的谋杀》</h3>
+                                    <p class="book-author">作者：荒川茜</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            老师终于忍不住插了一句：“我说多少遍了，不要用‘女刑警’这个词。怎么从没见男人被称作‘男刑警’呢？”
+                                        </blockquote>
+                                        <blockquote>
+                                            “请将我混沌的未来，彻底撞飞吧。”
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>很精妙的末世题材，从两位女主的经历开始逐渐引出整条故事线，故事扣人心弦。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 书籍2 -->
+                        <div class="book-slide">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《雾都孤儿》</h3>
+                                    <p class="book-author">作者：狄更斯</p>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>幽默讽刺的语调，令人印象深刻。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(3, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(3, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-3">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 四月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-4">
+                <h2 class="month-title">四月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《刘慈欣科幻小说集》</h3>
+                                    <p class="book-author">作者：刘慈欣</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            和平视窗计划只是个美丽的童话，竞赛代替不了战争，就像葡葡酒代替不了鲜血。
+                                        </blockquote>
+                                        <blockquote>
+                                            为了苦难中的祖国，我扑动蝴蝶的翅膀……
+                                        </blockquote>
+                                        <blockquote>
+                                            人类将自豪地去死，因为我们尽了最大的努力！
+                                        </blockquote>
+                                        <blockquote>
+                                            他必须活下去，因为山无处不在。
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>科幻中也有浪漫，读到结局总能会心一笑。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 书籍2 -->
+                        <div class="book-slide">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《千里江山图》</h3>
+                                    <p class="book-author">作者：孙甘露</p>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>想说的话有很多，但都无法说出口。叶桃的死令我心痛，那么年轻美丽而又鲜活的生命，我不想看到她在我面前死去。想必陈千里当时会比我难过百倍吧，英雄已去，但总有记住她的人。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(4, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(4, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-4">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 五月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-5">
+                <h2 class="month-title">五月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《情人》</h3>
+                                    <p class="book-author">作者：玛格丽特·杜拉斯</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            我自以为我在写作，但事实上我从来就不曾写过，我以为在爱，但我从来也不曾爱过，我什么也没有做，不过是站在那紧闭的门前等待罢了。
+                                        </blockquote>
+                                        <blockquote>
+                                            “我认识你，永远记得你。那时候，你还很年轻，人人都说你美，现在，我是特为来告诉你，对我来说，我觉得现在你比年轻的时候更美，那时你是年轻女人，与你那时的面貌相比，我更爱你现在备受摧残的面容。”
+                                        </blockquote>
+                                        <blockquote>
+                                            他的英雄气概，那就是我，他的奴性，那就是他的父亲的金钱。
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>也算是作者的自传吧，比较意识流，读起来和其它书相比有不一样的感觉，能把他们之间的爱写成这样足以看出杜拉斯的写作能力。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 书籍2 -->
+                        <div class="book-slide">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《罗生门》</h3>
+                                    <p class="book-author">作者：芥川龙之介</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            你们还有旺盛的生活欲望吧？
+                                        </blockquote>
+                                        <blockquote>
+                                            人生悲剧的第一幕始于成为父母子女。遗传、境遇、偶然——掌握我们命运的，终究还是这三种东西。
+                                        </blockquote>
+                                        <blockquote>
+                                            正因为那是梦，所以我还想好好活一回。正如彼梦会醒来一般，此梦也终有梦醒之时。在梦醒之时到来以前，我想真正地活一回，要活得不虚此生。
+                                        </blockquote>
+                                        <blockquote>
+                                            春阳照孤坟，垅中逝者陌上人，幽明本难分。
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>短篇小说集，每篇小说讽刺性都很强，芥川龙之介做到了以最短的篇幅写最辛辣的故事。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(5, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(5, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-5">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 六月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-6">
+                <h2 class="month-title">六月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                     
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《北上》</h3>
+                                    <p class="book-author">作者：徐则臣</p>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>前期不错，后期简直不知道写到哪里去了。并无可圈可点之处，情节拖沓，部分情节重点不突出人物形象单薄，读起来浪费时间。名不副实，靠立意拿的茅盾文学奖吗？</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 书籍2 -->
+                        <div class="book-slide">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《霍乱时期的爱情》</h3>
+                                    <p class="book-author">作者：加西亚·马尔克斯</p>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>不认同书中主角的做法，其观念更是可以称之为恶心，部分情节笔力仍在。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(6, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(6, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-6">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 七月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-7">
+                <h2 class="month-title">七月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《海子的诗》</h3>
+                                    <p class="book-author">作者：海子</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            "击鼓之后，我们把在黑暗中跳舞的心脏叫做月亮<br>这月亮主要由你构成"
+                                        </blockquote>
+                                        <blockquote>
+                                            "我想我已经够小心翼翼的<br>我的脚趾正好十个<br>我的手指正好十个<br>我生下来时哭几声<br>我死去时别人又哭<br>我不声不响地<br>带来自己这个包袱<br>尽管我不喜爱自己<br>但我还是悄悄打开"
+                                        </blockquote>
+                                        <blockquote>
+                                            "我没有再读一遍<br>普希金将她们和拖鞋一起投进壁炉<br>我则把这些温暖的灰烬<br>把这些信塞进一双小雨鞋<br>让她们沉睡千年<br>梦见洪水和大雨"
+                                        </blockquote>
+                                        <blockquote>
+                                            "西藏，一块孤独的石头坐满整个天空<br>没有任何夜晚能使我沉睡<br>没有任何黎明能使我醒来<br>一块孤独的石头坐满整个天空<br>他说：在这一千年里我只热爱我自己<br>一块孤独的石头坐满整个天空<br>没有任何泪水使我变成花朵<br>没有任何国王使我变成王座"
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>语言美丽，引发共鸣与深思，每一篇都值得仔细品读。《亚洲铜》为诗篇之最。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 书籍2 -->
+                        <div class="book-slide">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《额尔古纳河右岸》</h3>
+                                    <p class="book-author">作者：迟子建</p>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>写的不怎样，满是谶言式的死亡。论写少数民族，不如李娟的作品。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(7, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(7, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-7">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 八月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-8">
+                <h2 class="month-title">八月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《莎士比亚悲剧集》</h3>
+                                    <p class="book-author">作者：莎士比亚</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            "苦恼的呻吟换来了轻蔑；多少次心痛的叹息才换得了羞答答的秋波一盼；片刻的欢娱，是二十个晚上辗转无眠的代价。即使成功了，也许会得不偿失；要是失败了，那就白费一场辛苦。恋爱汩没了人的聪明，使人变得愚蠢。"
+                                        </blockquote>
+                                        <blockquote>
+                                            "最芬芳的花蕾中有蛀虫，最聪明人的心里，才会有蛀蚀心灵的爱情。"
+                                        </blockquote>
+                                        <blockquote>
+                                            "火关得越紧，烧起来越猛烈。"
+                                        </blockquote>
+                                        <blockquote>
+                                            "新的火焰可以把旧的火焰扑灭，大的苦痛可以使小的苦痛减轻；头晕目眩的时候，只要转身向后；一桩绝望的忧伤，也可以用另一桩烦恼把它驱除。给你的眼睛找一个新的迷惑，你的原来的痼疾就可以霍然脱体。"
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>目录即是生死簿。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 书籍2 -->
+                        <div class="book-slide">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《遗落的南境》</h3>
+                                    <p class="book-author">作者：范德米尔</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            "我记得你，索尔。我记得光的守护者。我从没忘记过你，只是隔了很久才回来。"
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>第一部十分精彩，其他两部不怎样。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(8, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(8, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-8">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 九月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-9">
+                <h2 class="month-title">九月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《罗杰疑案》</h3>
+                                    <p class="book-author">作者：阿加莎·克里斯蒂</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            "卷入案件的每个人都有所隐瞒。"
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>史上第一叙诡小说，愿天堂没有西葫芦。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 书籍2 -->
+                        <div class="book-slide">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《恶意》</h3>
+                                    <p class="book-author">作者：东野圭吾</p>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>推理情节极少，警官凭着直觉就找到正确答案，后面也像是为了反转而反转，除了猫的那一部分，精彩之处少有。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(9, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(9, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-9">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 十月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-10">
+                <h2 class="month-title">十月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                     
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《局外人》</h3>
+                                    <p class="book-author">作者：加缪</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            "今天，妈妈死了。也许是在昨天，我搞不清。"
+                                            <br><br>
+                                            "现在我面对着这个充满了星光与默示的夜，第一次向这个冷漠的世界敞开了我的心扉。我体验到这个世界如此像我，如此友爱融洽，觉得自己过去曾经是幸福的，现在仍然是幸福的。"
+                                            <br><br>
+                                            "为了善始善终，功德圆满，为了不感到自己属于另类，我期望处决我的那天，有很多人前来看热闹，他们都向我发出仇恨的叫喊声。"
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>确实感受到了加缪非常浓重的个人色彩。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(10, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(10, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-10">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 十一月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-11">
+                <h2 class="month-title">十一月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《面纱》</h3>
+                                    <p class="book-author">作者：毛姆</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            或许所有她做过的错事蠢事，所有她经受的磨难，并不全是毫无意义的——那将是一条通往安宁的路。
+                                        </blockquote>
+                                        <blockquote>
+                                            "我对你根本没抱幻想。"他说道，"我知道你愚蠢、轻佻、头脑空虚，然而我爱你。我知道你的企图、你的理想，你势利、庸俗，然而我爱你。我知道你是个二流货色，然而我爱你。"
+                                        </blockquote>
+                                        <blockquote>
+                                            "我觉得你对我有失公正。"她说道，"因为我愚蠢、轻佻、虚荣，你就责备我，这对我是不公平的。我就是被这样教养大的，我身边所有的女孩都是如此……你不能因为一个人不喜欢听交响音乐会，不会欣赏音乐就责备他。你不能强求我不具备的东西，否则对我就是不公平。我从来没欺骗过你，假装我会这会那。我有的仅仅是可爱漂亮，天性活泼。你不能指望到集市的货摊上买珍珠项链和貂皮大衣，你是去那儿买锡做的小号和玩具气球的。"
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>很喜欢书中对各类人物的刻画，无论是查尔斯唐生这类不折不扣的斯文败类，还是凯蒂和瓦尔特这种两面性的角色，抑或是留白型的多萝西，这些角色间的拉扯都很有张力。</p>
+                                        <p>再说凯蒂，这本书的唯一主角。无论查尔斯还是瓦尔特都是在为她的成长与转变提供平台。从小的教育让她没能成为如瓦尔特般有内涵的人，所以那时候的她除美貌外空无一物，但是环境仍能改变一个人，在与修女和孤儿的相处中她重新成长，在死亡之地向新生发出呼唤，可同样环境的作用仍然很大，受查尔斯和多萝西的感染，她又一度沉溺，只不过与之前不同的是她心中已有了自己对于对错的标尺。回到老家开启的生活，必然是崭新的生活，而我相信在最后的最后，她会实现自己的设想。</p>
+                                        <p>也许在两人明知双方无法相爱仍开启这段婚姻的时候，错误已经开始了，但是错误之中不只有悲剧产生，也有鲜花绽放。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 书籍2 -->
+                        <div class="book-slide">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《羊道·春牧场》</h3>
+                                    <p class="book-author">作者：李娟</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            当道路不再艰险的时候，"到来"和"离开"将会变成多么轻率的事情啊。
+                                        </blockquote>
+                                        <blockquote>
+                                            像我这样懦弱的人，总是不停地担忧这担忧那的人，过得好辛苦啊。这也是我的命运。
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>明丽轻快的文字，让我得以窥见游牧民族的生活一隅。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(11, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(11, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-11">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 十二月阅读记录 - 严肃文学 -->
+            <section class="month-section" id="serious-month-12">
+                <h2 class="month-title">十二月</h2>
+                <div class="book-slider">
+                    <div class="slider-container">
+                        <!-- 书籍1 -->
+                        <div class="book-slide active">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《罪与罚》</h3>
+                                    <p class="book-author">作者：陀思妥耶夫斯基</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            你认为怎么样，难道做出成万件好事来还抵不过一宗小小的罪行吗？用一个人的生命，却可以救出成千人的生命，使他们免于沦亡和消灭。一个人的死换来一百人的生存，这是简简单单的算术！
+                                        </blockquote>
+                                        <blockquote>
+                                            "一个有良心的人，如果认识到自己的错误，就一定会痛苦。对他来说，这也就是苦刑之外的惩罚。"
+                                        </blockquote>
+                                        <blockquote>
+                                            我不是对您下跪，我是对人类的全部苦难下跪。
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>我看出他的不幸。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 书籍2 -->
+                        <div class="book-slide">
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    
+                                </div>
+                                <div class="book-info">
+                                    <h3 class="book-title">《银河帝国3：第二基地》</h3>
+                                    <p class="book-author">作者：阿西莫夫</p>
+                                    <div class="book-quotes">
+                                        <h4>书中名言</h4>
+                                        <blockquote>
+                                            浪漫的幻想有如一朵脆弱无比的小花。一个神经过敏的人手中的一把核铳，就足以摧毁一切。
+                                        </blockquote>
+                                    </div>
+                                    <div class="book-review">
+                                        <h4>有感</h4>
+                                        <p>非常绕，但是结局确实意料之外情理之中，每个角色都有其作用。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="prevBook(12, 'serious')"></button>
+                    <button class="slider-btn next-btn" onclick="nextBook(12, 'serious')"></button>
+                    <div class="slider-indicators" id="serious-indicators-12">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+            </div>
+            
+            <!-- 其他小说分类内容 -->
+            <div id="other-content" class="category-content">
+                <!-- 一月阅读记录 - 其他小说 -->
+                <section class="month-section active" id="other-month-1">
+                    <h2 class="month-title">一月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">《龙族·一》</h3>
+                                        <p class="book-author">作者：江南</p>
+                                        <div class="book-quotes">
+                                            <h4>书中名言</h4>
+                                            <blockquote>
+                                                "在你最孤独最无望的时候，有一扇门会在你身边打开。"
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(1, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(1, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-1">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 二月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-2">
+                    <h2 class="month-title">二月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">《烧烟》</h3>
+                                        <p class="book-author">作者：张它</p>
+                                        <div class="book-quotes">
+                                            <h4>书中名言</h4>
+                                            <blockquote>
+                                                "幸亏身上有泥，不然马上烧成烧鸡。"张海楼被张海侠从屋子里拖出来的时候说，"虾仔， 做普通人也不太好，普通人有很多眼泪要掉。下次咱们做烟和火柴，在砂纸上的火光里见一面， 一起烧一起灭。"
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(2, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(2, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-2">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 三月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-3">
+                    <h2 class="month-title">三月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">《龙族·二》</h3>
+                                        <p class="book-author">作者：江南</p>
+                                        <div class="book-quotes">
+                                            <h4>书中名言</h4>
+                                            <blockquote>
+                                                人的记忆很靠不住，就像一块容易被消磁的破硬盘。过去的事情就像是画在沙地上的画，时间流逝，沙被风吹走，记忆模煳，最后化成茫茫的一片，再也无法分辨。
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(3, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(3, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-3">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 四月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-4">
+                    <h2 class="month-title">四月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">暂无</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(4, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(4, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-4">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 五月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-5">
+                    <h2 class="month-title">五月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">暂无</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(5, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(5, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-5">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 六月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-6">
+                    <h2 class="month-title">六月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                         
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">《盗墓笔记·祖祀》</h3>
+                                        <p class="book-author">作者：南派三叔</p>
+                                        <div class="book-quotes">
+                                            <h4>书中名言</h4>
+                                            <blockquote>
+                                                "他是一场大雪。"
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(6, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(6, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-6">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 七月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-7">
+                    <h2 class="month-title">七月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">暂无</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(7, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(7, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-7">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 八月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-8">
+                    <h2 class="month-title">八月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">《龙族·三》</h3>
+                                        <p class="book-author">作者：江南</p>
+                                        <div class="book-quotes">
+                                            <h4>书中名言</h4>
+                                            <blockquote>
+                                                "哥哥，你淋雨，我就不打伞。"
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(8, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(8, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-8">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 九月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-9">
+                    <h2 class="month-title">九月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">暂无</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(9, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(9, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-9">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 十月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-10">
+                    <h2 class="month-title">十月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                         
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">《悟空传》</h3>
+                                        <p class="book-author">作者：今何在</p>
+                                        <div class="book-quotes">
+                                            <h4>书中名言</h4>
+                                            <blockquote>
+                                                "我要这天，再遮不住我眼，<br>
+                                                要这地，再埋不了我心，<br>
+                                                要这众生，都明白我意，<br>
+                                                要那诸佛，都烟消云散！"
+                                                <br><br>
+                                                "生我何用？不能欢笑。灭我何用？不减狂骄。"
+                                                <br><br>
+                                                "爱的苦果<br>
+                                                将在成熟时坠落（引自北岛）"
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(10, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(10, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-10">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 十一月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-11">
+                    <h2 class="month-title">十一月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">暂无</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(11, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(11, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-11">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 十二月阅读记录 - 其他小说 -->
+                <section class="month-section" id="other-month-12">
+                    <h2 class="month-title">十二月</h2>
+                    <div class="book-slider">
+                        <div class="slider-container">
+                            <!-- 书籍1 -->
+                            <div class="book-slide active">
+                                <div class="book-card">
+                                    <div class="book-cover">
+                                        
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">暂无</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="prevBook(12, 'other')"></button>
+                        <button class="slider-btn next-btn" onclick="nextBook(12, 'other')"></button>
+                        <div class="slider-indicators" id="other-indicators-12">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- 其他月份结构类似，这里省略 -->
+        </div>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 我的阅读记录 | 记录每一次阅读的美好时光</p>
+        </div>
+    </footer>
+    </div> <!-- 关闭双栏布局容器 -->
+</div> <!-- 关闭阅读记录主内容 -->
+
+    <!-- 新记录模态框 -->
+    <div id="new-record-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>新阅读记录</h2>
+                <span class="close-btn" onclick="closeNewRecordModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- 书籍分类选择 -->
+                <div class="form-group">
+                    <label for="book-category">书籍分类：</label>
+                    <select id="book-category">
+                        <option value="serious">严肃文学</option>
+                        <option value="other">其他小说</option>
+                    </select>
+                </div>
+
+                <!-- 书籍月份选择 -->
+                <div class="form-group">
+                    <label for="book-month">阅读月份：</label>
+                    <select id="book-month">
+                        <option value="1">一月</option>
+                        <option value="2">二月</option>
+                        <option value="3">三月</option>
+                        <option value="4">四月</option>
+                        <option value="5">五月</option>
+                        <option value="6">六月</option>
+                        <option value="7">七月</option>
+                        <option value="8">八月</option>
+                        <option value="9">九月</option>
+                        <option value="10">十月</option>
+                        <option value="11">十一月</option>
+                        <option value="12">十二月</option>
+                    </select>
+                </div>
+
+                <!-- 书籍卡片 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <!-- 封面图片可以留空或添加默认图片 -->
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title" contenteditable="true">书名</h3>
+                        <p class="book-author">
+                            作者：
+                            <span class="editable-author-name" contenteditable="true">作者名</span>
+                        </p>
+                        <div class="book-quotes">
+                            <h4>书中名言</h4>
+                            <blockquote contenteditable="true">
+                                请输入书中名言...
+                            </blockquote>
+                            <blockquote contenteditable="true">
+                                请输入书中名言...
+                            </blockquote>
+                        </div>
+                        <div class="book-review">
+                            <h4>有感</h4>
+                            <p contenteditable="true">
+                                请输入读后感...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 操作按钮 -->
+                <div class="form-actions">
+                    <button class="save-btn" onclick="saveNewRecord()">保存记录</button>
+                    <button class="cancel-btn" onclick="cancelNewRecord()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
